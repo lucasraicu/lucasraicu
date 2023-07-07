@@ -1,7 +1,15 @@
 <!DOCTYPE HTML>
+<!--
+	REU PI Virtual Meeting 2021 by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html>
 <head>
-  <title>Interactive Travel Map</title>
+  <title>Travel</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
   <style>
     #map {
       height: 400px;
@@ -10,9 +18,52 @@
   </style>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
-<body>
-  <h1>Interactive Travel Map</h1>
-  <div id="map"></div>
+<body class="subpage">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="inner">
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="academics.html">Academics</a>
+        <a href="sports.html">Sports</a>
+        <a href="music.html">Music</a>
+        <a href="travel.html">Travel</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="mailto:lucas.raicu@gmail.com">Contact Me</a>
+      </nav>
+      <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <section id="main" class="wrapper">
+    <div class="inner">
+      <header class="align-center">
+        <h2>Travel</h2>
+      </header>
+
+      <p>
+        I love to travel, and have visited 14 states (IL, MI, AK, FL, CO, HI, AZ NY, PA, CA, IN, DC, WI, OH) as well as 4 countries (United States, Canada, Romania, Bulgaria) around the world.
+        Here is an interactive map of all the places I have visited.
+      </p>
+
+      <hr>
+
+      <div id="map"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <div class="flex">
+        <div class="copyright">
+          Lucas's Personal Website
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
@@ -27,29 +78,21 @@
 
     // Example pin coordinates
     var pinCoordinates = [
-        { lat: 41.8781, lng: -87.6298 }, // IL
-            { lat: 44.3148, lng: -85.6024 }, // MI
-            { lat: 61.3850, lng: -152.2683 }, // AK
-            { lat: 27.9944, lng: -81.7603 }, // FL
-            { lat: 39.5501, lng: -105.7821 }, // CO
-            { lat: 21.3069, lng: -157.8583 }, // HI
-            { lat: 34.0489, lng: -111.0937 }, // AZ
-            { lat: 40.7128, lng: -74.0060 }, // NY
-            { lat: 41.2033, lng: -77.1945 }, // PA
-            { lat: 36.7783, lng: -119.4179 }, // CA
-            { lat: 39.7684, lng: -86.1581 }, // IN
-            { lat: 38.9072, lng: -77.0369 }, // DC
-            { lat: 44.5133, lng: -89.5742 }, // WI
-            { lat: 40.4173, lng: -82.9071 }, // OH
-            { lat: 56.1304, lng: -106.3468 }, // Canada
-            { lat: 45.9432, lng: 24.9668 }, // Romania
-            { lat: 42.7339, lng: 25.4858 } // Bulgaria
-      ];
+      { lat: 41.8781, lng: -87.6298 }, // Chicago
+      { lat: 48.8566, lng: 2.3522 }, // Paris
+      { lat: -33.8651, lng: 151.2099 } // Sydney
+    ];
+
     // Add markers for each set of coordinates
     for (var i = 0; i < pinCoordinates.length; i++) {
       var marker = L.marker([pinCoordinates[i].lat, pinCoordinates[i].lng]).addTo(map);
     }
   </script>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
 </body>
 </html>
-     
