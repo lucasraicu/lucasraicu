@@ -41,6 +41,57 @@
 
 					<p>Type your info here...
 					</p>
+		
+<html>
+  <title>Interactive Travel Map</title>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Travel Map</h1>
+  <div id="map"></div>
+
+  <script>
+    // Initialize and display the map
+    function initMap() {
+      // Set the coordinates for the initial map center
+      var centerCoordinates = { lat: 0, lng: 0 };
+      
+      // Create the map
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: centerCoordinates,
+        zoom: 2
+      });
+      
+      // Add a marker to the map based on coordinates
+      function addMarker(coordinates) {
+        new google.maps.Marker({
+          position: coordinates,
+          map: map
+        });
+      }
+      
+      // Example pin coordinates
+      var pinCoordinates = [
+        { lat: 40.7128, lng: -74.0060 }, // New York
+        { lat: 48.8566, lng: 2.3522 }, // Paris
+        { lat: -33.8651, lng: 151.2099 } // Sydney
+      ];
+      
+      // Add markers for each set of coordinates
+      for (var i = 0; i < pinCoordinates.length; i++) {
+        addMarker(pinCoordinates[i]);
+      }
+    }
+  </script>
+  
+  <!-- Load the Google Maps API with your own API key -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+		
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
