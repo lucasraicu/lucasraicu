@@ -1,51 +1,6 @@
 <!DOCTYPE HTML>
-<!--
-	REU PI Virtual Meeting 2021 by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
-	<head>
-		<title>Travel</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="subpage">
-
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<nav id="nav">
-					<a href="index.html">Home</a>
-					
-						<a href="academics.html">Academics</a>
-						<a href="sports.html">Sports</a>
-						<a href="music.html">Music</a>
-						<a href="travel.html">Travel</a>
-						<a href="hobbies.html">Hobbies</a>
-						<a href="mailto:lucas.raicu@gmail.com">Contact Me</a>
-					</nav>
-					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-				
-				</div>
-			</header>
-
-
-		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<header class="align-center">
-					<font size="+2">
-						<h2>Travel</h2>
-					</header>
-					<p>
-					I love to travel, and have visited 14 states (IL, MI, AK, FL, CO, HI, AZ NY, PA, CA, IN, DC, WI, OH) as well as 4 countries (United States, Canada, Romania, Bulgaria) around the world. 
-					Here is an interactive map of all the places I have visited.
-					</p>
-					<hr>
-		
-<html>
+<head>
   <title>Interactive Travel Map</title>
   <style>
     #map {
@@ -53,33 +8,25 @@
       width: 100%;
     }
   </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
   <h1>Interactive Travel Map</h1>
   <div id="map"></div>
 
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
     // Initialize and display the map
-    function initMap() {
-      // Set the coordinates for the initial map center
-      var centerCoordinates = { lat: 0, lng: 0 };
-      
-      // Create the map
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: centerCoordinates,
-        zoom: 2
-      });
-      
-      // Add a marker to the map based on coordinates
-      function addMarker(coordinates) {
-        new google.maps.Marker({
-          position: coordinates,
-          map: map
-        });
-      }
-      
-      // Example pin coordinates
-      var pinCoordinates = [
+    var map = L.map('map').setView([0, 0], 2);
+
+    // Create the tile layer (using OpenStreetMap as the tile source)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      maxZoom: 18
+    }).addTo(map);
+
+    // Example pin coordinates
+    var pinCoordinates = [
         { lat: 41.8781, lng: -87.6298 }, // IL
             { lat: 44.3148, lng: -85.6024 }, // MI
             { lat: 61.3850, lng: -152.2683 }, // AK
@@ -98,41 +45,11 @@
             { lat: 45.9432, lng: 24.9668 }, // Romania
             { lat: 42.7339, lng: 25.4858 } // Bulgaria
       ];
-      
-      // Add markers for each set of coordinates
-      for (var i = 0; i < pinCoordinates.length; i++) {
-        addMarker(pinCoordinates[i]);
-      }
+    // Add markers for each set of coordinates
+    for (var i = 0; i < pinCoordinates.length; i++) {
+      var marker = L.marker([pinCoordinates[i].lat, pinCoordinates[i].lng]).addTo(map);
     }
   </script>
-  
-  <!-- Load the Google Maps API with your own API key -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN3cung2-_PbJNF7gQ2IQXruRZLEyE0eo&callback=initMap" async defer></script>
-		
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="flex">
-						<div class="copyright">
-							Lucas's Personal Website
-						</div>
-						<!--
-						<ul class="icons">
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
-							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
-							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
-						</ul> -->
-					</div>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
+     
