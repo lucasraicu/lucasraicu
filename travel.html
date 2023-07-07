@@ -37,18 +37,19 @@
   </header>
 
   <!-- Main -->
-  <section id="main" class="wrapper">
-    <div class="inner">
-      <header class="align-center">
-        <h2>Travel</h2>
-      </header>
-
-      <p>
-        I love to travel, and have visited 14 states (IL, MI, AK, FL, CO, HI, AZ NY, PA, CA, IN, DC, WI, OH) as well as 4 countries (United States, Canada, Romania, Bulgaria) around the world.
-        Here is an interactive map of all the places I have visited.
-      </p>
-
-      <hr>
+ 	<section id="main" class="wrapper">
+		<div class="inner">
+			<header class="align-center">
+				<font size="+2">
+					<h2>Sports</h2>
+					</header>
+					<h2>Soccer</h2>
+					<p>My soccer journey began when I was five years old on a small team in the AYSO program. However, when I turned seven, my parents decided to move me to the Glenview Soccer Club (GSC) to enhance my technical and physical abilities. 
+					During my early years of travel soccer, I alternated between blocking shots as goalkeeper and scoring goals as a forward. After a few years, I decided to stick to being a part of the offense and made the transition to FC-1, which is the older brother club of GSC. 
+					As I continued to progress, high school tryouts approached, and I made the Freshman B team. Even though this seemed like bad news at first since I didn’t make the A team, it was actually a blessing in disguise. 
+					I played in all twenty-two of our matches and remarkably achieved the highest goal count, scoring 18 goals, while also contributing seven assists in the whole program. Following the school season, I joined FC Mirage, a competitive travel club, to maintain my skill.
+					With the fall season approaching, my aim is to make the sophomore team and score even more goals and assists than in my freshman year.</p>
+					<hr>
 
       <div id="map"></div>
     </div>
@@ -78,10 +79,25 @@
 
     // Example pin coordinates
     var pinCoordinates = [
-      { lat: 41.8781, lng: -87.6298 }, // Chicago
-      { lat: 48.8566, lng: 2.3522 }, // Paris
-      { lat: -33.8651, lng: 151.2099 } // Sydney
-    ];
+            { lat: 41.8781, lng: -87.6298 }, // IL
+            { lat: 44.3148, lng: -85.6024 }, // MI
+            { lat: 61.3850, lng: -152.2683 }, // AK
+            { lat: 27.9944, lng: -81.7603 }, // FL
+            { lat: 39.5501, lng: -105.7821 }, // CO
+            { lat: 21.3069, lng: -157.8583 }, // HI
+            { lat: 34.0489, lng: -111.0937 }, // AZ
+            { lat: 40.7128, lng: -74.0060 }, // NY
+            { lat: 41.2033, lng: -77.1945 }, // PA
+            { lat: 36.7783, lng: -119.4179 }, // CA
+            { lat: 39.7684, lng: -86.1581 }, // IN
+            { lat: 38.9072, lng: -77.0369 }, // DC
+            { lat: 44.5133, lng: -89.5742 }, // WI
+            { lat: 40.4173, lng: -82.9071 }, // OH
+            { lat: 56.1304, lng: -106.3468 }, // Canada
+            { lat: 45.9432, lng: 24.9668 }, // Romania
+            { lat: 42.7339, lng: 25.4858 } // Bulgaria
+          ];
+
 
     // Add markers for each set of coordinates
     for (var i = 0; i < pinCoordinates.length; i++) {
