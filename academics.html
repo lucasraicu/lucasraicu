@@ -54,23 +54,15 @@
 						</p> <br><br>
 						<div id="output"></div>
 
-    					<script type="text/javascript">
-       						var output = '';
-
-        					function executePythonCode() {
-           				 		pyodide.runPythonAsync(`
-               						import sys
-               						
-               						for i in range(10):
-                   						sys.stdout.write(str(i) + '\\n')
-            						`).then(function(result) {
-                					output = result.stdout;
-                					document.getElementById('output').innerText = output;
-           							});
-        }
-
-        executePythonCode();
-    </script>
+    					<script type="text/python">
+       						print("Hello World")
+						</script>
+        				
+        				<script type="text/javascript">
+        					var output = pyscript.stdout;
+        					document.getElementById('output').innerText = output;
+        				</script>
+    
 						
 		<!-- Footer -->
 			<footer id="footer">
