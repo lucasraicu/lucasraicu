@@ -52,9 +52,25 @@
 						roster of GBS's Math Team, competing against other neighboring schools in both indvidual and team sections. Driven by the desire of discovering the intersection between STEM and medicine, I am have taken up the role of Technology Director on the Medical Chapter Club board, where I am entrusted with the responsibility of maintaining the 
 						club's website, bringing in accomplished guest speakers, and expanding the club's reach, through online platforms, to a wider audience of students.
 						</p> <br><br>
-						<py>
-        					print("hi")
-    					</py>
+						<div id="output"></div>
+
+    					<script type="text/javascript">
+       						var output = '';
+
+        					function executePythonCode() {
+           				 		pyodide.runPythonAsync(`
+               						import sys
+               						
+               						for i in range(10):
+                   						sys.stdout.write(str(i) + '\\n')
+            						`).then(function(result) {
+                					output = result.stdout;
+                					document.getElementById('output').innerText = output;
+           							});
+        }
+
+        executePythonCode();
+    </script>
 						
 		<!-- Footer -->
 			<footer id="footer">
