@@ -57,28 +57,16 @@
 						roster of GBS's Math Team, competing against other neighboring schools in both indvidual and team sections. Driven by the desire of discovering the intersection between STEM and medicine, I am have taken up the role of Technology Director on the Medical Chapter Club board, where I am entrusted with the responsibility of maintaining the 
 						club's website, bringing in accomplished guest speakers, and expanding the club's reach, through online platforms, to a wider audience of students.
 						</p> <br><br>
-						<textarea id="code" rows="10" cols="50">
-							print("Hello, World!")
-    					</textarea>
-
-    					<button onclick="executePythonCode()">Run</button>
-
-    					<pre id="output"></pre>
-
-   						<script type="text/javascript">
-        					function executePythonCode() {
-           						var code = document.getElementById('code').value;
-            					var outputElement = document.getElementById('output');
-
-           						Sk.configure({ output: function(text) { outputElement.innerText += text; } });
-            					Sk.misceval.asyncToPromise(function() {
-                					return Sk.importMainWithBody("<stdin>", false, code, true);
-           						}).catch(function(err) {
-                					outputElement.innerText += err.toString();
-           						});
-       					 	}
-    					</script>
-    
+						
+						<py-config>
+               			plugins = [
+                  			"https://pyscript.net/latest/plugins/python/py_tutor.py"
+                		]
+            			</py-config>
+            			<py-script>
+            				print("hi")
+                   		</py-script>	
+			</section>
 						
 		<!-- Footer -->
 			<footer id="footer">
