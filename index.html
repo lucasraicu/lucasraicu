@@ -10,6 +10,22 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			#nav {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			#nav a {
+				margin-right: -5px;
+				}
+			@media (max-width: 480px) {
+				#nav {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+			}
+		</style>
 	</head>
 	<body>
 
@@ -26,8 +42,9 @@
 						<a href="music.html">Music</a>
 						<a href="travel.html">Travel</a>
 						<a href="hobbies.html">Hobbies</a>
-						<a href="resume.html">Resume</a>
 						<a href ="python.html">Code</a>
+						<a href="resume.html">Resume</a>
+						
 						
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
