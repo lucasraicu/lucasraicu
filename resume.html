@@ -28,7 +28,7 @@
 						padding-bottom: 75%; /* Adjust this value as needed to maintain the desired aspect ratio */
 						position: relative;
 						}
-					.pdf-embed {
+					.pdf-object {
 						position: absolute;
 						top: 0;
 						left: 0;
@@ -67,10 +67,13 @@
 						</font>
 					</header>
 					<div class="pdf-container">
-						<embed src="images/resume.pdf" class="pdf-embed" />
+						<object data="images/resume.pdf" type="application/pdf" class="pdf-object">
+							<p>Your browser does not support PDF viewing. Please download the PDF to view it: <a href="images/resume.pdf">Download PDF</a></p>
+						</object>
 					</div>
 				</div>
 			</section>
+
 			
 
       			
