@@ -22,6 +22,19 @@
 						margin: 0 0 1em 0;
 						padding: 0;
     					}
+    				.pdf-container {
+						width: 100%;
+						height: 0;
+						padding-bottom: 75%; /* Adjust this value as needed to maintain the desired aspect ratio */
+						position: relative;
+						}
+					.pdf-embed {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						}
 		</style>
 	</head>
 	<body class="subpage" lang=EN-US link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
@@ -53,9 +66,11 @@
 							<h2>Resume</h2>
 						</font>
 					</header>
-					<embed src="images/resume.pdf" width="100%" height="1500px"></embed>
+					<div class="pdf-container">
+						<embed src="images/resume.pdf" class="pdf-embed" />
+					</div>
 				</div>
-	<		</section>
+			</section>
 			
 
       			
