@@ -49,48 +49,82 @@
 						
 
 						In the summer of 2023, I had an amazing volunteer internship 
-						working with Prof. Ioan Raicu and his PhD student Lan Nguyen 
-						at Illinois Institute of Technology. ... 
+						working with Prof. Ioan Raicu and PhD student Lan Nguyen 
+						in the <a href="http://datasys.cs.iit.edu">DataSys Laboratory</a> 
+						at <a href="https://www.iit.edu/computer-science">Illinois Institute of Technology</a>. 
+						I spent the summer learning about computer science, data science, Python programming, 
+						and how to access and manage large datasets. I worked on a new project called 
+						CRYPTEX: fine-grained CRYPTocurrency datasets EXploration.
 						</p>	
 						<br>
+
+<div style="float: right;"></div>
+<div style="float: right; clear: right"><img src="images/btc-monthly-graph.png" alt="BTCUSD Monthly Data" align=right width=400 border=20></div>
 						
 						<p>	
+						The CRYPTEX project aimed to experiment with cryptocurrency time-series data, particularly candlestick data from exchanges like Binance. 
+						However, obtaining high-quality, one-second granularity data from exchange APIs and even online websites proved difficult, 
+						unintuitive, impossible, or expensive. This challenge inspired me to create an efficient Python-based framework that extracts 
+						the transaction history for 153 cryptocurrency trading pairs from Binance.us since September 2019. 
+						This data was then cleaned and summarized into a variety of sub-datasets ranging from yearly to one-second granularity candlesticks. 
+						To enable ease of data-sharing, I published a sample (<a href="https://www.kaggle.com/datasets/iraicu/fine-grained-bitcoin-historical-dataset-2019-2023">4-year BTCUSDT trading pair data</a>) 
+						dataset on Kaggle and the entirety of the 
+						datesets in CSV formatted files (261GB) on a publicly accessible <a href="http://crypto.cs.iit.edu/datasets/">web server</a>. 
+						The <a href="https://github.com/lucasraicu/CRYPTEX">CRYPTEX</a> code is open-source and accessible on GitHub.
+						I presented this project at the GCASR'24 as a <a href="CRYPTEX-GCASR24-poster.pdf">poster</a> in May 2024; 
+						in addition to the poster, I wrote a detailed <a href="CRYPTEX-GCASR24-paper.pdf">writeup</a> of my project. 						
+						</p>
+
+<div style="float: right;"></div>
+<div style="float: right; clear: right"><img src="images/backtesting.jpeg" alt="Backtesting" align=right width=400 border=20></div>
+
+
+						<p>	
+						I continued this project in the last year by investigating the original premise that 
+						cryptocurrency time-series data can be used to build models to automate trading. 
+						I explored various backtesting algorithms and implemented the in Python. 
+						I simulated trading strategies against historical data to evaluate their performance and identify potential opportunities and risks. 
+						I incorporated several indicators, such as moving averages and thresholding to determine winning performance and risks. 
+						I focused on optimizing hyperparameters within these models to enhance predictive accuracy and profitability, 
+						and used concurrency to speedup backtesting on multi-core systems.
+						Here is an example of a backtesting simulation, after a hyperparameter search of 10K simulations were done. 
+						We used the 1W BTCUSD candlestick data from 09/2019 to 05/2024 for evaluation.
+						The backtest stated with $1K worth of bitcoins, and ended with about $28K after 5 years.
+										
+						</p>
+
+<div style="float: right;"></div>
+<div style="float: right; clear: right"><img src="images/SmartHeater.jpeg" alt="SmartHeater" align=right width=400 border=20></div>
+
+
+						<p>	
+						Another related project I explored was the design and implementation of a personal smart heater. 
 						
-						I designed and developed 
-						<a href="https://github.com/lucas-raicu/ParslDock">ParslDock</a>, a 
-						Python-based pipeline using the Parsl parallel programming library 
-						and the K-Nearest Neighbors 
-						machine learning model to screen a huge molecular space of molecules 
-						against arbitrary receptors. We achieved a 38X speedup with ParslDock 
-						compared to a brute-force docking approach. Our results have been
-						accepted for publication through a peer-reviewed process at 
-						IEEE/ACM SuperComputing/SC 2023 conference, which I presented
-						in Denver Colorado in November as a poster 
-						(<a href="parsldock/ParslDock_2page_SC23.pdf">writeup</a>,<a href="parsldock/ParslDock_poster_SC23.pdf">poster</a>), 
-						as well as an <a href="parsldock/ParslDock_SC23_slides_2023.pdf">oral presentation</a>. 
-						At the SC'23 conference, I was awarded 2nd Place Winner of the ACM Student Research Competition (SRC)!
+										
 						</p>
 						
 
 					<h3>Source Code</h3>
 												<ul style="margin-top: 0;">
-	  <li><a href="https://github.com/lucasraicu">ParslDock Summer Project</a></li>
+	  <li><a href="https://github.com/lucasraicu/CRYPTEX">CRYPTEX Dataset Project</a></li>
+	  <li><a href="https://github.com/lucasraicu/backtesting">Backtesting Framework</a></li>
+	  <li><a href="https://github.com/lucasraicu/smartheater">Personal Smart Heater</a></li>
 	</ul>
 
 					<h3>Publications</h3>
 						<ol style="margin-top: 0;">
-	  <li>John Raicu, Valerie Hayot-Sasson, Kyle Chard, and Ian Foster. <a href="parsldock/ParslDock_2page_SC23.pdf">“Navigating the Molecular Maze: A Python-Powered Approach to Virtual Drug Screening”</a>, IEEE/ACM SuperComputing/SC 2023 [<a href="parsldock/ParslDock_poster_SC23.pdf">poster</a>]
+	  <li>Lucas Raicu, Stefan Donisa, Lucas Ciobanu, Lan Nguyen, Ioan Raicu. <a href="CRYPTEX-GCASR24-paper.pdf">"CRYPTEX: fine-grained CRYPTocurrency datasets EXploration"</a>, Greater Chicago Area Systems Research Workshop (GCASR) 2024 [<a href="CRYPTEX-GCASR24-poster.pdf">poster</a>] 
 </li>
 	</ol>
 
 					<h3>Technical Reports</h3>
 						<ol style="margin-top: 0;">
-	  <li>John Raicu, Valerie Hayot-Sasson, Kyle Chard, and Ian Foster. <a href="parsldock/ParslDock_final_report_2023.pdf">“ParslDock: A Python-Powered Approach to Virtual Drug Screening”</a>, Technical Report, University of Chicago, 2023</li>
+	  <li>Lucas Raicu, Ioan Raicu. <a href="BackTesting-CRYPTEX-TR.pdf">“Slow Turtle BackTesting with CRYPTEX”</a>, Technical Report, Illinois Institute of Technology, 2025</li>
 	</ol>
 
 					<h3>Presentations</h3>
 						<ol style="margin-top: 0;">
-		<li><a href="parsldock/ParslDock_SC23_slides_2023.pdf">“Navigating the Molecular Maze: A Python-Powered Approach to Virtual Drug Screening”</a>, IEEE/ACM SuperComputing/SC 2023, November 2023</li>
+		<li><a href="">“Improving Crypto Currency Analysis through Fine-Grained Historical Datasets”</a>, Illinois Institute of Technology, July 21st, 2023</li>
 	</ol>
 			
 
@@ -101,7 +135,7 @@
 				<div class="inner">
 					<div class="flex">
 						<div class="copyright">
-							Lucas's Personal Website (<a href="mailto:lucas.raicu@gmail.com">lucas.raicu@gmail.com</a>) -- Copyright © 2023. All Rights Reserved
+							Lucas's Personal Website (<a href="mailto:lucas.raicu@gmail.com">lucas.raicu@gmail.com</a>) -- Copyright © 2025. All Rights Reserved
 						</div>
 						<!--
 						<ul class="icons">
